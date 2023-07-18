@@ -79,7 +79,7 @@ func CreateMessage(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// Routes and handlers
-	http.HandleFunc("/tasks", CreateMessage)
+	http.HandleFunc("/messages", CreateMessage)
 
 	// Start the server
 	log.Println("The server is listening on port 8000...")
