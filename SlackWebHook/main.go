@@ -40,7 +40,7 @@ func Send(webhookUrl string, proxy string, payload Payload) []error {
 	return nil
 }
 
-func CreateMessage(w http.ResponseWriter, r *http.Request) {
+func CreateAndSendMessage(w http.ResponseWriter, r *http.Request) {
 
 	// Parse the request body to get the message data
 	var m Message
@@ -79,7 +79,7 @@ func CreateMessage(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// Routes and handlers
-	http.HandleFunc("/messages", CreateMessage)
+	http.HandleFunc("/messages", CreateAndSendMessage)
 
 	// Start the server
 	log.Println("The server is listening on port 8000...")
